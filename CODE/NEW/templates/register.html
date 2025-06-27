@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Image Reconstruction">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Image Reconstruction</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="static/assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="static/assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="static/assets/css/lightbox.css">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .header-area {
+            background-color: #343a40;
+            padding: 15px 0;
+        }
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .main-nav .logo img {
+            width: 150px;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin: 0 15px;
+        }
+
+        .main-nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .main-nav ul li a:hover,
+        .main-nav ul li a.active {
+            color: #4CAF50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .main-nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+
+        .register-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        .register-form h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .register-form button {
+            padding: 10px 20px;
+            background: #007BFF;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .register-form button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-area header-sticky">
+        <nav class="main-nav">
+            <a href="/" class="logo">
+                <img src="static/assets/images/templatemo-eduwell.png" alt="EduWell Template">
+            </a>
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/login" class="active">Login</a></li>
+                <li><a href="/register" class="active">Register</a></li>
+               
+               
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Register Form Section -->
+    <form action="/login" method="POST" class="register-form">
+        <h1>Register</h1>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+       
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

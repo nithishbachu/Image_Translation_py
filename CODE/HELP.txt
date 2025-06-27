@@ -1,0 +1,8 @@
+PROPOSED TECHNIQUE: "Dual-Mode Web-Based Image Processor"
+
+Compressed Description:
+A lightweight Flask-based web application that allows users to upload images and perform multiple processing tasks, including color space transformations (HSV, HLS, YCbCr, XYZ) and edge detection (Canny). It features user authentication, modular image processing, and a seamless web interface, making it ideal for quick and flexible image manipulation.
+
+
+
+EXISTING TECHNIQUE: "Single-directional image translation using large, task-specific models"

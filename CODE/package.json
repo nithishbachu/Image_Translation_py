@@ -1,0 +1,12 @@
+{
+  "name": "image-processing-app",
+  "private": true,
+  "scripts": {
+    "start": "python app.py"
+  },
+  "dependencies": {
+    "opencv-python": "^4.8.0",
+    "numpy": "^1.24.3",
+    "flask": "^2.0.1"
+  }
+}

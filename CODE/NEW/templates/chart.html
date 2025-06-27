@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Visualizations</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* Reuse the styling from your existing page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .chart-container {
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .header-area {
+            background-color: #343a40;
+            padding: 15px 0;
+        }
+
+        canvas {
+            margin: 0 auto;
+            display: block;
+        }
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .main-nav .logo img {
+            width: 150px;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin: 0 15px;
+        }
+
+        .main-nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .main-nav ul li a:hover,
+        .main-nav ul li a.active {
+            color: #4CAF50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .main-nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <div>
+        <header class="header-area header-sticky">
+            <nav class="main-nav">
+                <a href="/" class="logo">
+                    <img src="static/assets/images/templatemo-eduwell.png" alt="EduWell Template">
+                </a>
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/chart">Chart</a></li>
+                    <li><a href="/performance">Performance</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div><br><br><br>
+
+<!-- Main Content -->
+<div class="container">
+    <h1>Data Visualizations</h1>
+
+    <!-- HSV Chart Section -->
+    <div class="chart-container">
+        <h2>HSV Visualization</h2>
+        <canvas id="hsvChart"></canvas>
+    </div>
+
+    <!-- YCbCr Chart Section -->
+    <div class="chart-container">
+        <h2>YCbCr Visualization</h2>
+        <canvas id="ycbcrChart"></canvas>
+    </div>
+
+    <!-- HLS Chart Section -->
+    <div class="chart-container">
+        <h2>HLS Visualization</h2>
+        <canvas id="hlsChart"></canvas>
+    </div>
+
+    <!-- XYZ Chart Section -->
+    <div class="chart-container">
+        <h2>XYZ Visualization</h2>
+        <canvas id="xyzChart"></canvas>
+    </div>
+
+    <!-- Canny Edge Detection Section -->
+    <div class="chart-container">
+        <h2>Canny Edge Detection</h2>
+        <canvas id="cannyChart"></canvas>
+    </div>
+</div>
+
+<script>
+    // Example Pie Chart for HSV
+    const ctxHSV = document.getElementById('hsvChart').getContext('2d');
+    new Chart(ctxHSV, {
+        type: 'pie',
+        data: {
+            labels: ['Hue', 'Saturation', 'Value'],
+            datasets: [{
+                data: [30, 50, 20],
+                backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe']
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Example Bar Chart for YCbCr
+    const ctxYCbCr = document.getElementById('ycbcrChart').getContext('2d');
+    new Chart(ctxYCbCr, {
+        type: 'bar',
+        data: {
+            labels: ['Y', 'Cb', 'Cr'],
+            datasets: [{
+                label: 'YCbCr Values',
+                data: [60, 80, 40],
+                backgroundColor: ['#ffcd56', '#4bc0c0', '#ff9f40']
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Example Line Chart for HLS
+    const ctxHLS = document.getElementById('hlsChart').getContext('2d');
+    new Chart(ctxHLS, {
+        type: 'line',
+        data: {
+            labels: ['H', 'L', 'S'],
+            datasets: [{
+                label: 'HLS Trends',
+                data: [70, 40, 90],
+                borderColor: '#36a2eb',
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Example Radar Chart for XYZ
+    const ctxXYZ = document.getElementById('xyzChart').getContext('2d');
+    new Chart(ctxXYZ, {
+        type: 'radar',
+        data: {
+            labels: ['X', 'Y', 'Z'],
+            datasets: [{
+                label: 'XYZ Values',
+                data: [50, 75, 100],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)'
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Example Doughnut Chart for Canny Edge Detection
+    const ctxCanny = document.getElementById('cannyChart').getContext('2d');
+    new Chart(ctxCanny, {
+        type: 'doughnut',
+        data: {
+            labels: ['Edges Detected', 'Background'],
+            datasets: [{
+                data: [40, 60],
+                backgroundColor: ['#ff6384', '#36a2eb']
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+</body>
+</html>
